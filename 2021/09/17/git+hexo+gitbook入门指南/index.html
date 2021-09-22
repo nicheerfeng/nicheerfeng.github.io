@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/url.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/20.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"nicheerfeng.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+<meta name="description" content="为了硬凑字数写的小短文： 本文内容包含： 1、记录安装过程中的报错； 2、记录git的使用命令； 3、记录hexo的安装及next主题的优化； 4、记录gitbook的安装及优化； 5、记录markdown的安装及优化；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git+hexo+gitbook入门指南">
+<meta property="og:url" content="https://nicheerfeng.github.io/2021/09/17/git+hexo+gitbook%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Nicheerfeng&#39;s blog">
+<meta property="og:description" content="为了硬凑字数写的小短文： 本文内容包含： 1、记录安装过程中的报错； 2、记录git的使用命令； 3、记录hexo的安装及next主题的优化； 4、记录gitbook的安装及优化； 5、记录markdown的安装及优化；">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-17T15:41:51.000Z">
+<meta property="article:modified_time" content="2021-09-22T15:07:46.854Z">
+<meta property="article:author" content="Feng">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="gitbook">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://nicheerfeng.github.io/2021/09/17/git+hexo+gitbook%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://nicheerfeng.github.io/2021/09/17/git+hexo+gitbook%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/","path":"2021/09/17/git+hexo+gitbook入门指南/","title":"git+hexo+gitbook入门指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>git+hexo+gitbook入门指南 | Nicheerfeng's blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Nicheerfeng's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99"><span class="nav-number">1.</span> <span class="nav-text">解决代码报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo%E5%AE%89%E8%A3%85%E5%B7%A5%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">hexo安装工作步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">hexo优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%BF%9B%E9%98%B6"><span class="nav-number">4.</span> <span class="nav-text">git 使用及进阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gitbook%E6%9D%A5%E5%86%99%E4%B9%A6%EF%BC%9B"><span class="nav-number">5.</span> <span class="nav-text">如何使用gitbook来写书；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#markdown%E8%AF%AD%E6%B3%95%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="nav-number">6.</span> <span class="nav-text">markdown语法补充知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">7.</span> <span class="nav-text">npm使用命令</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Feng"
+      src="/images/me4.png">
+  <p class="site-author-name" itemprop="name">Feng</p>
+  <div class="site-description" itemprop="description">simple code to creat world</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nicheerfeng" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nicheerfeng" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:nicheerfengt@gmail.com" title="E-Mail → mailto:nicheerfengt@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nicheerfeng.github.io/2021/09/17/git+hexo+gitbook%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/me4.png">
+      <meta itemprop="name" content="Feng">
+      <meta itemprop="description" content="simple code to creat world">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nicheerfeng's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git+hexo+gitbook入门指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-09-17 23:41:51" itemprop="dateCreated datePublished" datetime="2021-09-17T23:41:51+08:00">2021-09-17</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-09-22 23:07:46" itemprop="dateModified" datetime="2021-09-22T23:07:46+08:00">2021-09-22</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/soft/" itemprop="url" rel="index"><span itemprop="name">soft</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>为了硬凑字数写的小短文：</p>
+<p>本文内容包含：</p>
+<p>1、记录安装过程中的报错；</p>
+<p>2、记录git的使用命令；</p>
+<p>3、记录hexo的安装及next主题的优化；</p>
+<p>4、记录gitbook的安装及优化；</p>
+<p>5、记录markdown的安装及优化；</p>
+<span id="more"></span>
+
+
+
+<h3 id="解决代码报错"><a href="#解决代码报错" class="headerlink" title="解决代码报错"></a>解决代码报错</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## </span></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/wdg1111/wdgreact.git</span><br><span class="line">Cloning into <span class="string">&#x27;wdgreact&#x27;</span>...</span><br><span class="line">fatal: Unsupported SSL backend <span class="string">&#x27;“openssl”&#x27;</span>. Supported SSL backends:</span><br><span class="line">        openssl</span><br><span class="line">        schannel</span><br><span class="line">出现上面的报错：</span><br><span class="line"></span><br><span class="line">解决方法</span><br><span class="line">git config --global --<span class="built_in">unset</span> http.sslBackend</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 解决报错：</span></span><br><span class="line">git.exe pull --progress --no-rebase -v <span class="string">&quot;origin&quot;</span>fatal: unable to access <span class="string">&#x27;https://github.com/konsumer/arduinoscope.git/&#x27;</span>: error setting certificate verify locations:</span><br><span class="line">CAfile: D:\Program Files\Git\mingw64/bin/curl-ca-bundle.crt</span><br><span class="line">CApath: none</span><br><span class="line">————————————————</span><br><span class="line"></span><br><span class="line">git config --system http.sslcainfo <span class="string">&quot;D:\bclang\R-4.0.5\library\openssl\curl-ca-bundle.crt&quot;</span></span><br><span class="line"></span><br><span class="line">（注意修改为正确的文件路径）或</span><br><span class="line">git config --system http.sslverify <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 暂时先以这种方法解决问题；</span></span><br><span class="line">我使用git config --system http.sslverify <span class="literal">false</span>  命令解决问题。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 报错解决：</span></span><br><span class="line">Git报错解决：OpenSSL SSL_read: Connection was reset, errno 10054 错误解决</span><br><span class="line"><span class="comment"># 打开Git命令页面，执行git命令脚本：修改设置，解除ssl验证</span></span><br><span class="line">git config --global http.sslVerify <span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## hexo - d 无法推送：</span></span><br><span class="line">deploy:  <span class="comment">## 注意下面代码的相对位置；错位后不能推送；</span></span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/nicheerfeng/nicheerfeng.gitihub.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  </span><br><span class="line"><span class="comment">## 报错记录：解决git push时出现Failed to connect to github.com port 443: Timed out</span></span><br><span class="line"><span class="comment"># 这里可能的原因是本地的代理或者host出现问题；</span></span><br><span class="line"><span class="comment"># 检测方法：第一是取消代理，仅使用本地host；或者更改代理：</span></span><br><span class="line"><span class="comment"># 解决办法参见：</span></span><br><span class="line">https://www.it610.com/article/1288132904815210496.htm</span><br><span class="line"><span class="comment"># 查询是否使用代理</span></span><br><span class="line">git config --global http.proxy</span><br><span class="line">git config --global https.proxy</span><br><span class="line">或者</span><br><span class="line">env|grep -I proxy</span><br><span class="line"><span class="comment">## 取消代理设置</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 报错记录：</span></span><br><span class="line"><span class="comment"># 解决：</span></span><br><span class="line">INFO  Validating config</span><br><span class="line">ERROR Deployer not found: git</span><br><span class="line"><span class="comment"># 方法：</span></span><br><span class="line">$ hexo d</span><br><span class="line">npm install --save hexo-deployer-git</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="hexo安装工作步骤"><a href="#hexo安装工作步骤" class="headerlink" title="hexo安装工作步骤"></a>hexo安装工作步骤</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">node -v	<span class="comment">#查看node版本</span></span><br><span class="line">npm -v	<span class="comment">#查看npm版本</span></span><br><span class="line">npm install -g cnpm --registry=http://registry.npm.taobao.org	<span class="comment">#安装淘宝的cnpm 管理器</span></span><br><span class="line">cnpm -v	<span class="comment">#查看cnpm版本</span></span><br><span class="line">cnpm install -g hexo-cli    <span class="comment">#安装hexo框架</span></span><br><span class="line">hexo -v	<span class="comment">#查看hexo版本</span></span><br><span class="line">mkdir blog	<span class="comment">#创建blog目录</span></span><br><span class="line"><span class="built_in">cd</span> blog	 <span class="comment">#进入blog目录</span></span><br><span class="line">sudo hexo init 	<span class="comment">#生成博客 初始化博客</span></span><br><span class="line">hexo s	<span class="comment">#启动本地博客服务</span></span><br><span class="line">http://localhost:4000/	<span class="comment">#本地访问地址</span></span><br><span class="line">hexo n 我的第一篇文章 <span class="comment">#创建新的文章 </span></span><br><span class="line"><span class="comment">#返回blog目录</span></span><br><span class="line">hexo clean <span class="comment">#清理</span></span><br><span class="line">hexo g <span class="comment">#生成</span></span><br><span class="line"><span class="comment">#Github创建一个新的仓库 YourGithubName.github.io</span></span><br><span class="line">cnpm install --save hexo-deployer-git <span class="comment">#在blog目录下安装git部署插件</span></span><br><span class="line">----</span><br><span class="line"><span class="comment">#配置_config.yml </span></span><br><span class="line">-----</span><br><span class="line">	<span class="comment"># Deployment</span></span><br><span class="line">	<span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">	deploy:</span><br><span class="line">  		<span class="built_in">type</span>: git</span><br><span class="line"> 		repo: https://github.com/YourGithubName/YourGithubName.github.io.git</span><br><span class="line">  		branch: master</span><br><span class="line">-----。</span><br><span class="line">hexo d	<span class="comment">#部署到Github仓库里</span></span><br><span class="line">https://YourGithubName.github.io/  <span class="comment">#访问这个地址可以查看博客</span></span><br><span class="line"></span><br><span class="line"> git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia  <span class="comment">#下载yilia主题到本地</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</span></span><br><span class="line"></span><br><span class="line">hexo c	<span class="comment">#清理一下</span></span><br><span class="line">hexo g	<span class="comment">#生成</span></span><br><span class="line">hexo d	<span class="comment">#部署到远程Github仓库</span></span><br><span class="line"></span><br><span class="line">hexo server -g 本地4000端口预览；</span><br><span class="line"></span><br><span class="line"><span class="comment">## 远程更新到github之前，本地win；</span></span><br><span class="line"><span class="comment"># 需要先配置ssh文件；</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 获取github的ssh网页地址：</span></span><br><span class="line">在建立的仓库中选择code，然后点击ssh即可；</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="hexo优化"><a href="#hexo优化" class="headerlink" title="hexo优化"></a>hexo优化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###################### 主题优化 #####################</span></span><br><span class="line"><span class="comment"># 安装及下载主题：</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br><span class="line"></span><br><span class="line"><span class="comment">## 主题基本内容优化</span></span><br><span class="line"></span><br><span class="line">参见：</span><br><span class="line">方法1：https://www.jianshu.com/p/3af2687c01b4</span><br><span class="line"></span><br><span class="line">方法2：https://blog.csdn.net/prefectjava/article/details/111192741</span><br><span class="line"></span><br><span class="line"><span class="comment">## 双语修改：</span></span><br><span class="line">language_switcher: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 图片保存：</span></span><br><span class="line">mn4.jpg 全文背景；</span><br><span class="line"></span><br><span class="line"><span class="comment">## 主题优化报错：</span></span><br><span class="line">在将主题优化后，到github上面之后，数据显示不全，或乱码：</span><br><span class="line"><span class="comment"># 解决方法：</span></span><br><span class="line">修改根目录下的_config.yml，然后将url改为你的gihub网站；</span><br><span class="line"></span><br><span class="line"><span class="comment">##################### 配置图床 ########################</span></span><br><span class="line"><span class="comment">## 使用picgo：</span></span><br><span class="line"><span class="comment">## 注意token的最长有效期为90天，也即3个月；</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 相关参数：</span></span><br><span class="line">仓库名：buyishusheng/datapicture</span><br><span class="line">分支名：master</span><br><span class="line">token：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</span><br><span class="line">指定储存路径：img/</span><br><span class="line">设计自定义域名：https://github.com/buyishusheng/datapicture/master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 注意添加图传的 markdown形式后，需要在其后面添加：</span></span><br><span class="line">?raw=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### ###################  hexo提交markdown ##############</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 相关配置：</span></span><br><span class="line">title: Hello World</span><br><span class="line">date: 2019-06-28 22:36:00</span><br><span class="line">categories: hexo</span><br><span class="line">tags:</span><br><span class="line">  - hexo</span><br><span class="line">  - others</span><br><span class="line">  </span><br><span class="line"><span class="comment">## </span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="git-使用及进阶"><a href="#git-使用及进阶" class="headerlink" title="git 使用及进阶"></a>git 使用及进阶</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## git使用：</span></span><br><span class="line"><span class="comment">## 使用git：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 查看个人配置和全局配置：</span></span><br><span class="line">git config --list : 按q退出；</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果要求修改某个参数，直接百度即可；</span></span><br><span class="line"><span class="comment"># 例如master 改为 main </span></span><br><span class="line"> git config --global init.defaultBranch main</span><br><span class="line"><span class="comment">## 查看个人配置参数：</span></span><br><span class="line">C:\Users\admin\.gitconfig </span><br><span class="line"></span><br><span class="line"><span class="comment">## git的分支思想：</span></span><br><span class="line">分支在实际中有什么用呢？假设你准备开发一个新功能，但是需要两周才能完成，第一周你写了50%的代码，如果立刻提交，由于代码还没写完，不完整的代码库会导致别人不能干活了。如果等代码全部写完再一次提交，又存在丢失每天进度的巨大风险。</span><br><span class="line"></span><br><span class="line">现在有了分支，就不用怕了。你创建了一个属于你自己的分支，别人看不到，还继续在原来的分支上正常工作，而你在自己的分支上干活，想提交就提交，直到开发完毕后，再一次性合并到原来的分支上，这样，既安全，又不影响别人工作。</span><br><span class="line"></span><br><span class="line">其他版本控制系统如SVN等都有分支管理，但是用过之后你会发现，这些版本控制系统创建和切换分支比蜗牛还慢，简直让人无法忍受，结果分支功能成了摆设，大家都不去用。</span><br><span class="line"></span><br><span class="line">但Git的分支是与众不同的，无论创建、切换和删除分支，Git在1秒钟之内就能完成！无论你的版本库是1个文件还是1万个文件。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 相关流程记录：</span></span><br><span class="line">1 、在github创建远程仓库；</span><br><span class="line">2、使用git <span class="built_in">clone</span> 远程仓库；ssh格式的；</span><br><span class="line"></span><br><span class="line">3、 根据远程仓库中的文件，修改自己的代码或者增添新的文件；</span><br><span class="line">4、 使用git add <span class="string">&quot;添加指定文件&quot;</span> 或者add .增加所有文件(注意空格)；</span><br><span class="line">5、 使用git commit -m <span class="string">&quot;用于记录测试&quot;</span>，添加本次将信息拷贝到缓存的分支记录信息；</span><br><span class="line">5.1 理论上这里每次应该可以回滚，查看所有提交的历史记录；</span><br><span class="line"></span><br><span class="line">6、上传文件到github对应的仓库；</span><br><span class="line">git push -u origin main  <span class="comment">## 注意origin main为固定格式，不可改变；</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## git进阶：</span></span><br><span class="line">1、查看修改文件的历史记录：</span><br><span class="line">git <span class="built_in">log</span> --follow -p ddd.txt <span class="comment">##仅包含修改部分；</span></span><br><span class="line"></span><br><span class="line">2、查看历史回滚记录：</span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line">3、创建分支；</span><br><span class="line"><span class="comment"># 目的是有一个总分支，然后在子分支上工作；将子分支合并到总分支中；</span></span><br><span class="line">$ git checkout -b iss53</span><br><span class="line">Switched to a new branch <span class="string">&quot;iss53&quot;</span></span><br><span class="line">该命令为下面两条命令的简写：</span><br><span class="line">$ git branch iss53</span><br><span class="line">$ git checkout iss53</span><br><span class="line">3.1 删除分支：</span><br><span class="line">git branch -D hotfix</span><br><span class="line">3.2 删除远程分支：</span><br><span class="line">git push origin --delete new_a</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4、 切换分支：</span><br><span class="line"> git checkout iss53 <span class="comment">## 子分支；</span></span><br><span class="line">  git checkout main <span class="comment">## 总分支；</span></span><br><span class="line"></span><br><span class="line">5、分支合并：</span><br><span class="line">5.1 子分支合并到主分支？</span><br><span class="line">git merge hotfix <span class="comment"># 其中hotfix是子分支，默认即合并；</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 如果子分支与总分支出现合并冲突，则需要手动解决；</span></span><br><span class="line"></span><br><span class="line">6、查看所有分支;</span><br><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何使用gitbook来写书；"><a href="#如何使用gitbook来写书；" class="headerlink" title="如何使用gitbook来写书；"></a>如何使用gitbook来写书；</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 如何使用gitbook来写书；</span></span><br><span class="line">https://blog.csdn.net/weixin_39637597/article/details/104456912?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&amp;spm=1001.2101.3001.4242</span><br><span class="line"></span><br><span class="line"><span class="comment">## gitbook使用指南：</span></span><br><span class="line">安装：</span><br><span class="line">首先安装nodejs;</span><br><span class="line">然后使用rpm安装gitbook；</span><br><span class="line">npm install -g gitbook-cli</span><br><span class="line">gitbook -V  <span class="comment">## 会自动查看gitbook并更新软件；</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始化命令：</span></span><br><span class="line">gitbook init 生成两个初始文件；readme.md对书籍的简单介绍；summary为书籍目录结构；</span><br><span class="line">gitbook server:预览书目；</span><br><span class="line"></span><br><span class="line"><span class="comment">## 构建目录：</span></span><br><span class="line">gitbook子目录写作：</span><br><span class="line">* [zilu](zilu.md)</span><br><span class="line">	-  [zilu](zilu.md)</span><br><span class="line">	- (hrttps)</span><br><span class="line">	</span><br><span class="line"><span class="comment">## 安装插件：</span></span><br><span class="line">在该文件夹下生成book.json文件；</span><br><span class="line">并在npm下搜索相关插件的命令（https://www.npmjs.com/），把对应的代码复制到上面即可；</span><br><span class="line">复制完代码后执行， gitbook install 安装对应的插件；</span><br><span class="line">最后，在进行gitbook serve即可；</span><br><span class="line"><span class="comment"># 对应的添加评论插件；</span></span><br><span class="line">https://www.npmjs.com/package/gitbook-plugin-comments-footer</span><br><span class="line"><span class="comment">## 其他可能有用的；</span></span><br><span class="line">gitbook-plugin-donate(打赏按钮): https://www.npmjs.com/package/gitbook-plugin-donate</span><br><span class="line"></span><br><span class="line">gitbook-plugin-github-buttons(GitHub按钮): https://www.npmjs.com/package/gitbook-plugin-github-buttons</span><br><span class="line"></span><br><span class="line">gitbook-plugin-edit-link(GitHub编辑按钮): https://www.npmjs.com/package/gitbook-plugin-edit-link</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 命令合集：</span></span><br><span class="line">gitbook init //初始化目录文件</span><br><span class="line">gitbook <span class="built_in">help</span> //列出gitbook所有的命令</span><br><span class="line">gitbook --<span class="built_in">help</span> //输出gitbook-cli的帮助信息</span><br><span class="line">gitbook build //生成静态网页</span><br><span class="line">gitbook serve //生成静态网页并运行服务器</span><br><span class="line">gitbook build --gitbook=2.0.1 //生成时指定gitbook的版本, 本地没有会先下载</span><br><span class="line">gitbook ls //列出本地所有的gitbook版本</span><br><span class="line">gitbook ls-remote //列出远程可用的gitbook版本</span><br><span class="line">gitbook fetch 标签/版本号 //安装对应的gitbook版本</span><br><span class="line">gitbook update //更新到gitbook的最新版本</span><br><span class="line">gitbook uninstall 2.0.1 //卸载对应的gitbook版本</span><br><span class="line">gitbook build --<span class="built_in">log</span>=debug //指定<span class="built_in">log</span>的级别</span><br><span class="line">gitbook builid --debug //输出错误信息</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 相关插件：</span></span><br><span class="line"><span class="comment"># 常用插件推荐：</span></span><br><span class="line">https://blog.csdn.net/qq_37149933/article/details/64170653?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_utm_term~default-1.searchformbaiduhighlight&amp;spm=1001.2101.3001.4242</span><br><span class="line">disqus</span><br><span class="line">添加 disqus 评论插件。</span><br><span class="line"></span><br><span class="line">* [介绍](README.md)</span><br><span class="line">   - [next](zil.md)</span><br><span class="line">   </span><br><span class="line"><span class="comment">## 插件的参考写作方法：</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;title&quot;</span>: <span class="string">&quot;编写gitbook电子书教程&quot;</span>,</span><br><span class="line">    <span class="string">&quot;description&quot;</span>: <span class="string">&quot;gitbook电子书教程&quot;</span>,</span><br><span class="line">    <span class="string">&quot;author&quot;</span>: <span class="string">&quot;sphard&quot;</span>,</span><br><span class="line">    <span class="string">&quot;language&quot;</span>: <span class="string">&quot;zh-hans&quot;</span>,</span><br><span class="line">    <span class="string">&quot;root&quot;</span>: <span class="string">&quot;.&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;plugins&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;donate&quot;</span>,</span><br><span class="line">        <span class="string">&quot;github-buttons@2.1.0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;edit-link&quot;</span></span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;pluginsConfig&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;donate&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;wechat&quot;</span>: <span class="string">&quot;https://sphard.com/images/wechatpay.jpg&quot;</span>,</span><br><span class="line">            <span class="string">&quot;alipay&quot;</span>: <span class="string">&quot;https://sphard.com/images/alipay.jpg&quot;</span>,</span><br><span class="line">            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">            <span class="string">&quot;button&quot;</span>: <span class="string">&quot;打赏&quot;</span>,</span><br><span class="line">            <span class="string">&quot;alipayText&quot;</span>: <span class="string">&quot;支付宝打赏&quot;</span>,</span><br><span class="line">            <span class="string">&quot;wechatText&quot;</span>: <span class="string">&quot;微信打赏&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;github-buttons&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;repo&quot;</span>: <span class="string">&quot;darrenliuwei/gitbook&quot;</span>,</span><br><span class="line">            <span class="string">&quot;types&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;star&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="string">&quot;size&quot;</span>: <span class="string">&quot;small&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;edit-link&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;base&quot;</span>: <span class="string">&quot;https://github.com/darrenliuwei/gitbook/edit/master&quot;</span>,</span><br><span class="line">            <span class="string">&quot;label&quot;</span>: <span class="string">&quot;Edit This Page&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">################## gitbook写作知识进阶 ########################</span></span><br><span class="line">https://www.jianshu.com/p/a3f2316aee77</span><br></pre></td></tr></table></figure>
+
+<h3 id="markdown语法补充知识"><a href="#markdown语法补充知识" class="headerlink" title="markdown语法补充知识"></a>markdown语法补充知识</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## 插入图片和视频的语法：</span></span><br><span class="line"><span class="section"># 直接插入：![<span class="string">tmgar</span>](<span class="link">对应网页地址</span>)</span></span><br><span class="line"><span class="section"># 修改尺寸插入：</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>= <span class="string">&quot;对应的网页地址或者绝对地址&quot;</span>，<span class="attr">width</span> =<span class="string">&quot;100&quot;</span>,<span class="attr">height</span>=<span class="string">&quot;200&quot;</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="section">## 插入视频，是通过分享，或者嵌入式链接，直接复制即可；</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 字体添加颜色：</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;red&quot;</span>&gt;</span></span>红色文字（此部分输入的是文本文件）<span class="xml"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="section">## 插入网页：</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">http</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="section">## 转行</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="npm使用命令"><a href="#npm使用命令" class="headerlink" title="npm使用命令"></a>npm使用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">npm get global</span><br><span class="line"></span><br><span class="line">npm install -name-g  <span class="comment">## 安装到全局环境中；</span></span><br><span class="line"></span><br><span class="line">npm list： 查看当前目录下已经安装的所有软件；</span><br><span class="line"></span><br><span class="line"><span class="comment">## 安装第三方插件来更新npm对应的软件：</span></span><br><span class="line">npm install -g npm-check-updates</span><br><span class="line">ncu</span><br><span class="line"></span><br><span class="line"><span class="comment">## 卸载软件；</span></span><br><span class="line">npm uninstall -g gitbook</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 解决报错；</span></span><br><span class="line">TypeError: cb.apply is not a <span class="keyword">function</span></span><br><span class="line"><span class="comment">## 部分代码注释掉即可；</span></span><br><span class="line">https://blog.csdn.net/sinat_31057219/article/details/112506883</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Feng
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://nicheerfeng.github.io/2021/09/17/git+hexo+gitbook%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" title="git+hexo+gitbook入门指南">https://nicheerfeng.github.io/2021/09/17/git+hexo+gitbook入门指南/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/git/" rel="tag"># git</a>
+              <a href="/tags/gitbook/" rel="tag"># gitbook</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/06/28/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Feng</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
