@@ -53,4 +53,21 @@
         <tag>list</tag>
       </tags>
   </entry>
+  <entry>
+    <title>新增土壤温度环境数据库</title>
+    <url>/2022/01/14/%E6%96%B0%E5%A2%9E%E5%85%A8%E7%90%83%E5%9C%9F%E5%A3%A4%E6%B8%A9%E5%BA%A6%E7%8E%AF%E5%A2%83%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<p>《Global maps of soil temperature》</p>
+<span id="more"></span>
+
+<p>近期多领域研究学者合作提供了土壤温度和生物气候变量的全球地图，分辨率为 1 平方公里，土壤深度为 0-5 和 5-15 厘米。这些地图是通过计算原位土壤温度测量之间的差异（即偏移）创建的，基于来自世界上所有主要陆地生物群落的 1200 多个 1 平方公里像素（从 8500 个独特的温度传感器汇总）的时间序列，和来自 ERA5-Land 的粗粒度气温估计（欧洲中期天气预报中心的大气再分析）。</p>
+<p>原文链接：</p>
+<p><a href="https://www.researchgate.net/publication/357423667_Global_maps_of_soil_temperature">https://www.researchgate.net/publication/357423667_Global_maps_of_soil_temperature</a></p>
+]]></content>
+      <categories>
+        <category>envs</category>
+      </categories>
+      <tags>
+        <tag>soil</tag>
+      </tags>
+  </entry>
 </search>
