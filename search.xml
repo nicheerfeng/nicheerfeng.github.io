@@ -41,40 +41,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2019/06/28/hello-world/</url>
-    <content><![CDATA[<h3 id="这是一个不爱发文章的生态位研究者的博客。"><a href="#这是一个不爱发文章的生态位研究者的博客。" class="headerlink" title="这是一个不爱发文章的生态位研究者的博客。"></a>这是一个不爱发文章的生态位研究者的博客。</h3><h3 id="博客内容主题列表"><a href="#博客内容主题列表" class="headerlink" title="博客内容主题列表"></a>博客内容主题列表</h3><h3 id="1、R专题统计："><a href="#1、R专题统计：" class="headerlink" title="1、R专题统计："></a>1、R专题统计：</h3><ul>
-<li>R包开发</li>
-<li>shiny工具</li>
-<li>报错</li>
-<li>数据处理流程指南</li>
-</ul>
-<h4 id="2、真实世界研究："><a href="#2、真实世界研究：" class="headerlink" title="2、真实世界研究："></a>2、真实世界研究：</h4><ul>
-<li><p>RWD统计方案撰写技巧</p>
-</li>
-<li><p>数据标化</p>
-<span id="more"></span></li>
-<li><p>RWD流程构建及优化</p>
-</li>
-<li><p>流行病学与环境</p>
-</li>
-</ul>
-<h4 id="3、生态位研究"><a href="#3、生态位研究" class="headerlink" title="3、生态位研究"></a>3、生态位研究</h4><ul>
-<li>介绍生态位的历史、进展和前沿知识介绍</li>
-<li>生态位与物种进化</li>
-<li>生态位与物种分布建模</li>
-</ul>
-]]></content>
-      <categories>
-        <category>list</category>
-      </categories>
-      <tags>
-        <tag>list</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2012/09/27/%E5%8A%A0%E9%80%9FRWD%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1-%E5%BC%80%E5%8F%91pmed/</url>
+    <title>加速RWD描述性统计-开发新的R包pmed</title>
+    <url>/2022/09/27/%E5%8A%A0%E9%80%9FRWD%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1-%E5%BC%80%E5%8F%91pmed/</url>
     <content><![CDATA[<h3 id="加速RWD描述性统计-开发新的R包pmed"><a href="#加速RWD描述性统计-开发新的R包pmed" class="headerlink" title="加速RWD描述性统计-开发新的R包pmed"></a>加速RWD描述性统计-开发新的R包pmed</h3><h4 id="开发背景："><a href="#开发背景：" class="headerlink" title="开发背景："></a>开发背景：</h4><p>在近期的工作中，参与了国外某知名药企的降糖药物真实世界研究，在此过程中学习甚多，也感悟良多。因此，在 近期工作中将项目中用到的开发工具打包成R包，方便后续持续统一优化与减少重复。</p>
 <span id="more"></span>
 
@@ -106,6 +74,38 @@
       </categories>
       <tags>
         <tag>soil</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/06/28/hello-world/</url>
+    <content><![CDATA[<h3 id="这是一个不爱发文章的生态位研究者的博客。"><a href="#这是一个不爱发文章的生态位研究者的博客。" class="headerlink" title="这是一个不爱发文章的生态位研究者的博客。"></a>这是一个不爱发文章的生态位研究者的博客。</h3><h3 id="博客内容主题列表"><a href="#博客内容主题列表" class="headerlink" title="博客内容主题列表"></a>博客内容主题列表</h3><h3 id="1、R专题统计："><a href="#1、R专题统计：" class="headerlink" title="1、R专题统计："></a>1、R专题统计：</h3><ul>
+<li>R包开发</li>
+<li>shiny工具</li>
+<li>报错</li>
+<li>数据处理流程指南</li>
+</ul>
+<h4 id="2、真实世界研究："><a href="#2、真实世界研究：" class="headerlink" title="2、真实世界研究："></a>2、真实世界研究：</h4><ul>
+<li><p>RWD统计方案撰写技巧</p>
+</li>
+<li><p>数据标化</p>
+<span id="more"></span></li>
+<li><p>RWD流程构建及优化</p>
+</li>
+<li><p>流行病学与环境</p>
+</li>
+</ul>
+<h4 id="3、生态位研究"><a href="#3、生态位研究" class="headerlink" title="3、生态位研究"></a>3、生态位研究</h4><ul>
+<li>介绍生态位的历史、进展和前沿知识介绍</li>
+<li>生态位与物种进化</li>
+<li>生态位与物种分布建模</li>
+</ul>
+]]></content>
+      <categories>
+        <category>list</category>
+      </categories>
+      <tags>
+        <tag>list</tag>
       </tags>
   </entry>
 </search>
