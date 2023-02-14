@@ -108,4 +108,22 @@
         <tag>list</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Shiny开发指南上线</title>
+    <url>/2023/02/14/Shiny%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97%E4%B8%8A%E7%BA%BF/</url>
+    <content><![CDATA[<h3 id="Shiny开发指南上线"><a href="#Shiny开发指南上线" class="headerlink" title="Shiny开发指南上线"></a>Shiny开发指南上线</h3><h4 id="开发背景："><a href="#开发背景：" class="headerlink" title="开发背景："></a>开发背景：</h4><p>在近期的工作中开发大量shiny应用，但有感于整理的资料过于散乱，查询和检索相对麻烦，故使用shiny快速结合既往资料开发此工具指南。</p>
+<span id="more"></span>
+
+<h4 id="开发内容："><a href="#开发内容：" class="headerlink" title="开发内容："></a>开发内容：</h4><p>1、包括常用shiny组件代码、shiny工具包导航、css和js开发、shiny开发的脚手架、shiny学习相关的书籍和相关Tips。</p>
+<p>2、开发采用基本shiny框架构建，结合弹出式的sweetleart和markdown文件来辅助快速查询和填充知识库。</p>
+<h4 id="开发用途："><a href="#开发用途：" class="headerlink" title="开发用途："></a>开发用途：</h4><p>优化shiny开发过程中非必要时间浪费，减少重复查询和记忆。</p>
+<h4 id="R包网址："><a href="#R包网址：" class="headerlink" title="R包网址："></a>R包网址：</h4><p><a href="http://www.nicheerfeng.world/apps/shiny_union/">http://www.nicheerfeng.world/apps/shiny_union/</a></p>
+]]></content>
+      <categories>
+        <category>R</category>
+      </categories>
+      <tags>
+        <tag>shiny</tag>
+      </tags>
+  </entry>
 </search>
